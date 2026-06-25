@@ -17,14 +17,14 @@ concurrency:
 jobs:
   dep:
     runs-on: ubuntu-latest
+    env: 
+      NEGA_TOK: ${{ secrets.nega_test_tok2 }}
     steps:
       - uses: actions/checkout@v5
         with:
           ref: ${{ github.sha }}  # lock to triggered commit (github.ref is dynamic)
 
       - uses: docker/build-push-action@v6
-        env: 
-          NEGA_TOK: ${{ secrets.nega_test_tok2 }}
         with:
           context: .
           file: ./Dockerfile
