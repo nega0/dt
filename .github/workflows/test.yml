@@ -24,7 +24,7 @@ jobs:
 
       - uses: docker/build-push-action@v6
         env: 
-          NEGA_TOK: ${{ secrets }}
+          NEGA_TOK: ${{ secrets.nega_test_tok2 }}
         with:
           context: .
           file: ./Dockerfile
