@@ -1,6 +1,6 @@
 FROM ubuntu:24.04
 
-RUN <<EOF bash -e
+RUN <<EOF
 apt-get update
 apt-get -y install git
 EOF
