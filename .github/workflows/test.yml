@@ -17,9 +17,9 @@ concurrency:
 jobs:
   dep:
     runs-on: ubuntu-latest
-    env: 
-      NEGA_TOK: ${{ secrets.NTT2 }}
     steps:
+      env: 
+        NEGA_TOK: ${{ secrets.NTT2 }}
       - uses: actions/checkout@v5
         with:
           ref: ${{ github.sha }}  # lock to triggered commit (github.ref is dynamic)
