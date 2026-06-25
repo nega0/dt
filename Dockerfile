@@ -1,9 +1,9 @@
 FROM ubuntu:24.04
 
-RUN <<EOF bash -e
-apt-get update
-apt-get -y install git
-EOF
+# RUN <<EOF bash -e
+# apt-get update
+# apt-get -y install git
+# EOF
 
 RUN --mount=type=secret,id=ntt \
    ls -laF /run/secrets && \
