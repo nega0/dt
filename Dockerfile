@@ -6,10 +6,11 @@ apt-get -y install git
 EOF
 
 RUN --mount=type=secret,id=github_token \
+   env |sort && \
    ls -laF /run/secrets && \
-   git clone https://$(cat /run/secrets/github_token)@github.com/nega0/aoc2024.git /opt/aoc2024 || true
-RUN env|sort
-RUN echo nt: ${NEGA_TOK}
-RUN git clone https://${NEGA_TOK}@github.com/nega0/aoc2024.git /opt/aoc
-RUN ls -laF /opt/aoc
+   git clone https://$(cat /run/secrets/github_token)@github.com/nega0/aoc2024.git /opt/aoc2024 && \
+   ls -laF /opt/aoc2024 || true
+# RUN echo nt: ${NEGA_TOK}
+# RUN git clone https://${NEGA_TOK}@github.com/nega0/aoc2024.git /opt/aoc
+# RUN ls -laF /opt/aoc
 #ENTRYPOINT ["/bin/bash", "-c", "cat /run/secrets/"]
