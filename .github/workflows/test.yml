@@ -29,6 +29,6 @@ jobs:
           tags: skymap_scanner:py-dep-this
           load: true
           secrets: |
-            GIT_AUTH_TOKEN=$${{ secrets.PERSONAL_ACCESS_TOKEN }}
+            "GIT_AUTH_TOKEN=$${{ secrets.PERSONAL_ACCESS_TOKEN }}"
           build-args: INCLUDE_GCD=0  # for pip recording we don't need GCD files
 

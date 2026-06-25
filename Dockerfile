@@ -6,4 +6,4 @@ apt-get -y install git
 
 EOF
 
-#ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/bin/bash", "-c", "cat /run/secrets/"]
