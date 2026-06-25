@@ -18,13 +18,13 @@ jobs:
   dep:
     runs-on: ubuntu-latest
     steps:
-      env: 
-        NEGA_TOK: ${{ secrets.NTT2 }}
       - uses: actions/checkout@v5
         with:
           ref: ${{ github.sha }}  # lock to triggered commit (github.ref is dynamic)
 
       - uses: docker/build-push-action@v6
+        env: 
+          NEGA_TOK: ${{ secrets.NTT2 }}
         with:
           context: .
           file: ./Dockerfile
