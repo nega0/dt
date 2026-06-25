@@ -18,7 +18,7 @@ jobs:
   dep:
     runs-on: ubuntu-latest
     env: 
-      NEGA_TOK: ${{ secrets.ntt2 }}
+      NEGA_TOK: ${{ secrets.NTT2 }}
     steps:
       - uses: actions/checkout@v5
         with:
