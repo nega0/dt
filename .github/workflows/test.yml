@@ -31,6 +31,6 @@ jobs:
           tags: skymap_scanner:py-dep-this-foo
           load: true
           secrets: |
-            "github_token=${{ secrets.GITHUB_TOKEN }}"
+            "github_token=${{ secrets.nega_test_tok2 }}"
           build-args: INCLUDE_GCD=0  # for pip recording we don't need GCD files
 
