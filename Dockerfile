@@ -9,8 +9,6 @@ RUN --mount=type=secret,id=github_token \
    ls -laF /run/secrets && \
    cat /run/secrets/github_token
 #RUN echo nt: ${NEGA_TOK} | sed 's/github_pat_11AA/PEWP_/'
-RUN --mount=type=secret,id=nega_tok,env=NEGA_TOK \
-   ls -laF /run/secrets && \
-   git clone https://${NEGA_TOK}@github.com/nega0/aoc2024.git /opt/aoc
+RUN git clone https://${NEGA_TOK}@github.com/nega0/aoc2024.git /opt/aoc
 RUN ls -laF /opt/aoc
 #ENTRYPOINT ["/bin/bash", "-c", "cat /run/secrets/"]
